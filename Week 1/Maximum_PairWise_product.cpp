@@ -42,7 +42,7 @@ int max_index_2 = 0 ;
 
 for(int i = 0 ; i<n ; ++i ){
 
-if( ( ( max_index_2 == -1)  || numbers[i] > numbers[max_index_2] ) && (numbers[i] != numbers[max_index_1] ) ) 
+if( ( ( max_index_2 == -1)  || numbers[i] > numbers[max_index_2] ) && (i != numbers[max_index_1] ) ) 
 
     max_index_2 = i ; 
 
