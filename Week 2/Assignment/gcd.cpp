@@ -12,9 +12,42 @@ int gcd_naive(int a, int b) {
   return current_gcd;
 }
 
+
+int gcd_fast(int a, int b){
+
+    if (b==0) return a ; 
+
+    int remain = 0 ; 
+
+    if(a<b)
+    {
+        int temp_b = b ; 
+        b = a ; 
+        a = temp_b ;
+    }
+
+    while(b!=0){
+
+        remain = a%b ; 
+        a = b ; 
+        b = remain ; 
+
+    }
+
+
+return a ; 
+    
+}
+
 int main() {
   int a, b;
   std::cin >> a >> b;
-  std::cout << gcd_naive(a, b) << std::endl;
+  // std::cout << gcd_naive(a, b) << std::endl;
+  std::cout << gcd_fast(a , b) << std::endl ;
+
   return 0;
 }
+
+
+
+a * b = LCM(a,b) * GCD(a,b) ; 

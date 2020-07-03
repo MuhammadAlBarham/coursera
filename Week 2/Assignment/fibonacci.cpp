@@ -14,6 +14,9 @@
 // 5. Remove the call to test_solution, uncomment the line with a call to fibonacci_fast (and the lines reading the input),
 //    and submit it to the grader.
 
+ 
+
+
 int fibonacci_naive(int n) {
     if (n <= 1)
         return n;
@@ -24,7 +27,22 @@ int fibonacci_naive(int n) {
 int fibonacci_fast(int n) {
     // write your code here
 
-    return 0;
+    if(n<=1) return n ; 
+
+    int prev, curr , temp_prev , ans ; 
+
+    prev = 0 ; curr = 1 ; 
+    
+
+    for(int i=2; i<=n;++i)
+    {
+        ans = prev + curr ; 
+        prev = curr ; 
+        curr = ans ; 
+        
+    }
+
+    return ans ; 
 }
 
 void test_solution() {
@@ -38,8 +56,9 @@ int main() {
     int n = 0;
     std::cin >> n;
 
-    std::cout << fibonacci_naive(n) << '\n';
+    //std::cout << fibonacci_naive(n) << '\n';
     //test_solution();
-    //std::cout << fibonacci_fast(n) << '\n';
+    std::cout << fibonacci_fast(n) << '\n';
     return 0;
 }
+
